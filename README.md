@@ -1,6 +1,6 @@
 # AWS SES
 
-**Terraform module to create AWS SES.**
+**Terraform module to create AWS S3 bucket.**
 
 
 ## Usage
@@ -8,10 +8,10 @@
 * Quick start example:
 
 ```hcl
-module "ses" {
+module "aws-s3" {
   source    = "git::https://github.com/terraform-library/aws-ses.git?ref=master"
-  ses_domain      = "${var.domain_name}"
-  hosted_zone_id  = "${var.zone_id}"
+  ses_domain      = "${var.bucket_name}"
+  hosted_zone_id  = "${var.bucket_acl}"
 }
 ```
 
@@ -21,8 +21,8 @@ module "ses" {
 
 | Name                  |    Default    | Description                               | Required |
 |:----------------------|:-------------:|:------------------------------------------|:--------:|
-| `ses_domain`          |    `None`     | Domain name required for creating ses     |    Yes   |
-| `hosted_zone_id`      |    `None`     | Provide the AWS Route53 hosted zone       |    Yes   |
+| `bucket_name`          |    `None`     | Bucket Name should be unique and comply with DNS naming conventions, must be at least 3 and no more than 63 characters long. Bucket names must not contain uppercase characters or underscores. Bucket names must start with a lowercase letter or number.     |    Yes   |
+| `bucket_acl`      |    `private`     | Bucket acl default private       |    Yes   |
 
 
        
