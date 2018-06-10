@@ -9,9 +9,9 @@
 
 ```hcl
 module "aws-s3" {
-  source    = "git::https://github.com/terraform-library/aws-ses.git?ref=master"
-  ses_domain      = "${var.bucket_name}"
-  hosted_zone_id  = "${var.bucket_acl}"
+  source    = "git::https://github.com/terraform-library/aws-s3.git?ref=master"
+  bucket_name  = "${var.bucket_name}"
+  bucket_acl   = "${var.bucket_acl}"
 }
 ```
 
